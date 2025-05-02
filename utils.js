@@ -3,7 +3,7 @@ const prompt=PromptSync();
 
 export const creaoggetto = () => {
     let presenza = false, lunghezza = false;
-    let t = prompt("\nInserire nome utente completo: ");
+    let t = prompt("Inserire nome utente completo: ");
     let s = prompt("Inserire il nome del sito: ");
     let p = controlloPassword();
     let d = controlloData();
@@ -158,7 +158,7 @@ export const stampa=(obj)=>
     console.log("VISUALIZZAZIONE DELLE CREDENZIALI");
     for(let i in obj)
     {
-        console.log("Nome utente: "+obj[i].nomeUtente+"\nSito: "+obj[i].sito+"\nPaswword: "+obj[i].passowrd+"\nData iscizione: "+obj[i].data+"\n");
+        console.log("Nome utente: "+obj[i].nomeUtente+"\nSito: "+obj[i].sito+"\nPaswword: "+obj[i].password+"\nData iscizione: "+obj[i].data+"\n");
     }
 
 }
