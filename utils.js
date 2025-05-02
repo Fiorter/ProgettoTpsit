@@ -61,21 +61,11 @@ function controlloData()
     do
     {
         console.log("Inserire la data di iscrizione");
-        let day=prompt("inserire il giorno:");
         let mouth=prompt("inserire il mese:");
+        let day=prompt("inserire il giorno:");
         let year=prompt("inserire l'anno:");
 
-        if(day<=giorno)
-        {
-            giornoCorretto=true;
-        }
-        else
-        {
-            console.log("Hai sbagliato a scrivere il giorno");
-            giornoCorretto=false
-        }
-
-        if(mouth<=mese)
+        if(mouth<=mese&&mouth>0)
         {
             meseCorretto=true;
         }
@@ -85,7 +75,32 @@ function controlloData()
             meseCorretto=false
         }
 
-        if(year<=anno)
+        if(mouth<mese)
+        {
+            if(day>0)
+            {
+                giornoCorretto=true;
+            }
+            else
+            {
+                console.log("Hai sbagliato a scrivere il giorno");
+                giornoCorretto=false
+            }
+        }
+        else
+        {
+            if(day<=giorno&&day>0)
+            {
+                giornoCorretto=true;
+            }
+            else
+            {
+                console.log("Hai sbagliato a scrivere il giorno");
+                giornoCorretto=false
+            }
+        }
+
+        if(year<=anno&&year>0)
         {
             annoCorretto=true;
         }
@@ -106,8 +121,8 @@ function controlloData()
 
 export const cancellaCredenziali=(obj)=>
 {
-    const scelta=prompt("Quale utente vuoi eliminare?");
-    let persona = obj.find(p => p.nomeUtente === scelta);
+    const nomeDaCercare=prompt("Quale utente vuoi eliminare?");
+    let persona = obj.find(p => p.nomeUtente === nomeDaCercare);
     if(persona)
     {
         const indice = obj.indexOf(oggettoDaEliminare);
