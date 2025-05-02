@@ -18,6 +18,11 @@ export const creaoggetto = () => {
     return utenteCredenziali;
 };
 
+function controlloUtente()
+{
+    
+}
+
 function controlloPassword() 
 {
     let lunghezza = false, presenza = false;
@@ -89,7 +94,7 @@ function controlloData()
         }
         else
         {
-            if(day<=giorno&&day>0)
+            if(day<=giorno&&day>0&&day<=31)
             {
                 giornoCorretto=true;
             }
@@ -121,19 +126,21 @@ function controlloData()
 
 export const cancellaCredenziali=(obj)=>
 {
-    const nomeDaCercare=prompt("Quale utente vuoi eliminare?");
+    const nomeDaCercare = prompt("Quale utente vuoi eliminare?");
     let persona = obj.find(p => p.nomeUtente === nomeDaCercare);
-    if(persona)
+    
+    if (persona)
     {
-        const indice = obj.indexOf(oggettoDaEliminare);
+        const indice = obj.indexOf(persona); 
         obj.splice(indice, 1);
-    }
-    else
+    } 
+    else 
     {
         console.log("Hai sbagliato a scrivere il nome dell'utente che vuoi cercare");
     }
-    
-}
+};
+
+
 
 export const modificaProprieta=(obj)=>
 {
@@ -180,7 +187,7 @@ export const stampa=(obj)=>
 
 export const cercaCredenziali=(obj)=>
 {
-    let nomeUtenteDACercacre=prompt("Scrivere il nome dell'utente che vuoi cercare");
+    let nomeUtenteDACercacre=prompt("Scrivere il nome dell'utente che vuoi cercare: ");
     let persona = obj.find(p => p.nomeUtente === nomeUtenteDACercacre);
     if(persona)
     {
