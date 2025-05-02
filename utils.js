@@ -169,7 +169,7 @@ export const cercaCredenziali=(obj)=>
     let persona = obj.find(p => p.nomeUtente === nomeUtenteDACercacre);
     if(persona)
     {
-        console.log("Nome utente: "+obj.nomeUtente+"\nSito: "+obj.sito+"\nPaswword: "+obj.passowrd+"\nData iscizione: "+obj.data);
+        console.log("Nome utente: "+persona.nomeUtente+"\nSito: "+persona.sito+"\nPaswword: "+persona.password+"\nData iscizione: "+persona.data);
     }
     else
     {
